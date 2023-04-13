@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    
+        
+        
+        
+
+    
+    {{ form_start(registrationForm) }}
+    <div id="contenedor">
+        <div id="central">
+            <div id="login">
+                <div class="titulo">
+                        Registrate
+                </div>
+                <form method="post" id="loginform">
+                    {{ form_row(registrationForm.correo) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                         label: 'Password'
+                        }) }} 
+                    {{ form_row(registrationForm.agreeTerms) }}
+
+                    <button class="btn btn-lg btn-primary" type="submit" title="Ingresar" name="Ingresar">Login</button>
+
+                </form>
+            </div>
+            <div class="inferior">
+                    <a href="#">Volver</a>
+            </div>
+        </div>
+    </div>
+    {{ form_end(registrationForm) }}
+
+
+{% endblock %}

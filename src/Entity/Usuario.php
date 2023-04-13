@@ -61,6 +61,13 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $roles;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="apellido", type="string", length=1, nullable=true)
+     */
+    private $estado;
+
 
     /**
      * @see PasswordAuthenticatedUserInterface
@@ -143,6 +150,17 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
     public function getCorreo(): ?string
     {
         return $this->correo;
+    }
+    public function getEstado(): ?int
+    {
+        return $this->estado;
+    }
+
+    public function setEstado(?string $estado): self
+    {
+        $this->estado = $estado;
+
+        return $this;
     }
 
     public function setCorreo(?string $correo): self
